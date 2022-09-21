@@ -1,0 +1,22 @@
+---
+- hosts: test-server
+  remote_user: ansadmin
+
+  tasks:
+    - name: Installing Apache
+      yum:
+        name:
+          - httpd
+        state: installed
+
+    - name: Enabling httpd service and start the service
+      service:
+        name: httpd
+        enabled: yes
+        state: started
+
+    - name: Copying your html file in the /var/www/html
+      copy:
+        src: /etc/ansible/index.html
+        dest: /var/www/html/index.html
+        force: yes
