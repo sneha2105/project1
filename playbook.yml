@@ -1,6 +1,6 @@
 ---
 - hosts: test-server
-  remote_user: ansadmin
+  remote_user: root
 
   tasks:
     - name: Installing Apache
