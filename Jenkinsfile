@@ -1,6 +1,6 @@
 pipeline {
     agent any
-
+    
     stages {
         stage('SCM-checkout') {
             steps {
@@ -8,13 +8,11 @@ pipeline {
             }
         }
     }
-     stages {
+    stages {
         stage('Ansible-deployment') {
             steps {
-                ansiblePlaybook become: true, credentialsId: 'ec2-user', disableHostKeyChecking: true, installation: 'ansible', inventory: 'hosts', playbook: 'install-httpd'
+                ansiblePlaybook become: true, credentialsId: 'ec2-user', disableHostKeyChecking: true, installation: 'ansible', inventory: 'host', playbook: 'playbook.yml'
             }
         }
-    }  
+    }
 }
-
-
