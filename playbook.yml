@@ -1,6 +1,6 @@
 ---
 - hosts: test-server
-  remote_user: root
+  remote_user: ansadmin
 
   tasks:
     - name: Installing Apache
@@ -17,6 +17,6 @@
 
     - name: Copying your html file in the /var/www/html
       copy:
-        src: /etc/ansible/index.html
+        src: ../indexfile
         dest: /var/www/html/index.html
         force: yes
