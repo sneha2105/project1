@@ -1,6 +1,6 @@
 ---
 - hosts: test-server
-  remote_user: ansadmin
+  remote_user: ec2-user
 
   tasks:
     - name: Installing Apache
