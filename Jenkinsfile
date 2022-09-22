@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Ansible-deployment') {
             steps {
-                ansiblePlaybook become: true, credentialsId: 'ec2-user', disableHostKeyChecking: true, installation: 'ansible', inventory: 'host', playbook: 'playbook.yml'
+                ansiblePlaybook become: true, credentialsId: 'ec2-user', disableHostKeyChecking: true, installation: 'ansible', inventory: 'Host', playbook: 'playbook.yml'
             }
         }
     }
